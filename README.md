@@ -1,6 +1,10 @@
 # Leonida Legend - GTA VI Trophy Guide and Tracker
 
-[![make.fun](https://img.shields.io/badge/make.fun-gta6--trophy--guide--01-7c3aed)](https://make.fun/bounty/gta6-trophy-guide-01?ref=ty7xpzdw)
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/airdropgodx24/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/airdropgodx24/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+
+Entered in the [gta6-trophy-guide-01 bounty on make.fun](https://make.fun/bounty/gta6-trophy-guide-01?ref=ty7xpzdw).
 
 An offline guide and tracker for all 55 PlayStation 5 trophies in Grand Theft Auto VI. Every trophy is listed with its official name, description and grade, plus an original guide in our own words that names its sources, a five-stage roadmap to the platinum, and a warning panel for the trophies that can be missed.
 
