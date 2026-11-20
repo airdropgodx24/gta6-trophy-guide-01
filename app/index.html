@@ -1,92 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<title>Leonida Legend - GTA VI Trophy Guide &amp; Tracker</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <h1>Leonida Legend</h1>
-  <p class="tagline">GTA VI Trophy Guide &amp; Tracker — all 55 PlayStation 5 trophies, one offline page.</p>
-  <div class="progress-wrap">
-    <div class="progress-head">
-      <span id="progress-text">0 of 55 earned · 0%</span>
-      <span id="progress-grades" class="progress-grades"></span>
-    </div>
-    <div class="progress-bar"><div id="progress-fill"></div></div>
-  </div>
+<header class="site-header">
+  <p class="eyebrow">Grand Theft Auto VI - PlayStation 5 - Offline guide</p>
+  <h1>Leonida Legend - GTA VI Trophy Guide &amp; Tracker</h1>
+  <p class="lede">All 55 official PS5 trophies with an original, source-cited guide for each one, a five-stage roadmap to the platinum, and a tracker whose progress is saved in this browser.</p>
+  <p id="progress-summary" class="progress-summary">0 of 55 earned - 55 to go</p>
+  <div class="progress-bar" aria-hidden="true"><div id="progress-fill" class="progress-fill"></div></div>
+  <p id="grade-counts" class="counts"></p>
+  <p id="stage-counts" class="counts"></p>
 </header>
 
-<section class="panels">
-  <div class="panel roadmap-panel">
-    <h2>Roadmap to the platinum</h2>
-    <div id="roadmap"></div>
-  </div>
-  <div class="panel missable-panel">
-    <h2>Missable &amp; caution</h2>
-    <p class="panel-note">These need care: keep rotating manual saves, and meditate at a new spot the moment you find it.</p>
-    <ul id="missable-list"></ul>
-  </div>
-</section>
+<main>
+  <section class="panel warning-panel" aria-labelledby="missable-heading">
+    <h2 id="missable-heading">Missable warning - read before you play</h2>
+    <p>13 trophies are flagged missable: the named story missions Trust, Break the Bank, Family Matters, DWNFALL, Hi-Jacked and Snow Storm; the strand finales for Andy, Kenton, Billy, Randy and Tyrone; Positive Mental Attitude, where one meditation spot is reported missable; and Actions Speak Louder, where choices are permanent. No mission replay has been reported in the sources checked, so keep rotating manual saves and finish each of these when it is offered.</p>
+    <p><a href="?kind=missable">See the 13 missable trophies</a></p>
+  </section>
 
-<section class="panel honesty">
-  <h2>Sources &amp; honesty note</h2>
-  <p>Trophy names and descriptions are shown as PlayStation publishes them, as listed by Exophase and PSNProfiles. Every guide on this page is written for this entry in its own words and names its sources beside the trophy. A few secret trophies have deliberately vague official descriptions and their exact methods were unconfirmed in the sources checked — those guides say so plainly instead of inventing steps. This app works fully offline and stores progress only in your browser.</p>
-</section>
+  <section class="panel roadmap-panel" aria-labelledby="roadmap-heading">
+    <h2 id="roadmap-heading">Roadmap to the platinum</h2>
+    <ol class="roadmap">
+      <li><strong>Stage 1 - Story and side strands first.</strong> Play the story chapters and missions in order and finish every stranger strand finale as it appears. This clears the missable trophies while they are available.</li>
+      <li><strong>Stage 2 - Activities and skills.</strong> Stunts, shooting range golds, Top Fun wins, races, challenges and the partner and robbery trophies.</li>
+      <li><strong>Stage 3 - Collectibles and exploration.</strong> Card sets, WAiNK locations, meditation spots, discovered vehicles and full exploration of Leonida.</li>
+      <li><strong>Stage 4 - Completion and the 100% grind.</strong> Money trophies, garage properties and the push to 100 percent completion.</li>
+      <li><strong>Stage 5 - Secrets and platinum cleanup.</strong> The hidden, vaguely described secret trophies, then the platinum itself once the other 54 are earned.</li>
+    </ol>
+  </section>
 
-<section class="controls" aria-label="Tracker controls">
-  <label>Search
-    <input id="search" type="search" placeholder="Search name, description or guide">
-  </label>
-  <label>Kind
-    <select id="kind-filter">
-      <option value="all">All kinds</option>
-      <option value="story">Story</option>
-      <option value="side">Side strands</option>
-      <option value="activities">Activities</option>
-      <option value="collectibles">Collectibles</option>
-      <option value="completion">Completion</option>
-      <option value="secret">Secret</option>
-      <option value="missable">Missable only</option>
-    </select>
-  </label>
-  <label>Grade
-    <select id="grade-filter">
-      <option value="all">All grades</option>
-      <option value="platinum">Platinum</option>
-      <option value="gold">Gold</option>
-      <option value="silver">Silver</option>
-      <option value="bronze">Bronze</option>
-    </select>
-  </label>
-  <label>Status
-    <select id="earned-filter">
-      <option value="all">All trophies</option>
-      <option value="earned">Earned</option>
-      <option value="unearned">Not yet earned</option>
-    </select>
-  </label>
-  <label class="spoiler-toggle">
-    <input id="spoiler" type="checkbox"> Hide story spoilers
-  </label>
-  <div class="control-buttons">
-    <button id="export" type="button">Export progress</button>
-    <label class="import-label">Import progress
-      <input id="import" type="file" accept="application/json,.json">
-    </label>
-    <button id="reset" type="button">Reset</button>
-  </div>
-  <p id="showing" class="showing"></p>
-</section>
+  <section class="panel controls-panel" aria-labelledby="controls-heading">
+    <h2 id="controls-heading">Find a trophy</h2>
+    <div class="controls">
+      <label>Search <input id="search" type="search" placeholder="Name, description or guide text"></label>
+      <label>Kind
+        <select id="kind-filter">
+          <option value="">All kinds</option>
+          <option value="story">Story</option>
+          <option value="side">Side</option>
+          <option value="activities">Activities</option>
+          <option value="collectibles">Collectibles</option>
+          <option value="completion">Completion</option>
+          <option value="secret">Secret</option>
+          <option value="missable">Missable only</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="grade-filter">
+          <option value="">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>State
+        <select id="state-filter">
+          <option value="">All trophies</option>
+          <option value="earned">Earned</option>
+          <option value="unearned">Not yet earned</option>
+        </select>
+      </label>
+      <label class="check"><input id="spoiler-toggle" type="checkbox"> Spoiler mode: hide unearned story trophies</label>
+    </div>
+    <div class="controls">
+      <button id="export-button" type="button">Export progress</button>
+      <label class="import-label">Import progress <input id="import-input" type="file" accept=".json,application/json"></label>
+      <button id="reset-button" type="button">Reset progress</button>
+      <span id="visible-count" class="counts"></span>
+    </div>
+  </section>
 
-<main id="list" class="list"></main>
+  <section aria-labelledby="list-heading">
+    <h2 id="list-heading">The 55 trophies</h2>
+    <div id="trophy-list" class="trophy-list"></div>
+    <p id="empty-message" class="empty" hidden>No trophies match the current search and filters.</p>
+  </section>
 
-<footer>
-  <p>Leonida Legend — an unofficial fan-made tracker. Progress is saved in this browser only (localStorage).</p>
-</footer>
-
-<script type="module" src="app.js"></script>
+  <footer class="site-footer">
+    <p>Names, descriptions and grades are the official PlayStation 5 list as listed by Exophase and PSNProfiles. Guides are original to this entry and cite Push Square, KeenGamer and GameMapa beside each trophy, with method detail cross-checked from PowerPyx and GamesRadar+. Where an official description is deliberately vague, the guide says the exact method was unconfirmed in the sources checked instead of inventing one. 28 trophies are hidden until earned and 13 are flagged missable. Original text and CSS only - no Rockstar Games artwork or logos.</p>
+  </footer>
+</main>
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,24 +1,40 @@
-// Leonida Legend trophy guide entry for gta6-trophy-guide-01.
-// This small program hands the guide in: it copies the static app and its
-// screenshots into the output folder and asks the vendored make.fun library
-// to build the dossier the judges read. The guide itself is plain static
-// files under app/ — this file is only the delivery step, written for
-// Node 22 with the standard library only.
+// Leonida Legend - GTA VI Trophy Guide and Tracker: hand-in program.
+//
+// This entry is a plain offline web app under app/ (index.html, style.css,
+// app.js and data/trophies.json). There is no build step for the app itself.
+// This program only hands it in: it copies app/ and screenshots/ into the
+// output directory and writes dossier.json there with the vendored make.fun
+// library, exactly as the scorer will rebuild it.
+//
+// Run locally with: MAKEFUN_OUTPUT_DIR=out node main.ts
+// In the grader, MAKEFUN_OUTPUT_DIR is unset and /output is used.
 
 import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
 
-const here = fileURLToPath(new URL('.', import.meta.url));
-const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+const entryRoot = fileURLToPath(new URL('.', import.meta.url));
+const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
-mkdirSync(out, { recursive: true });
-cpSync(join(here, 'app'), join(out, 'app'), { recursive: true });
-mkdirSync(join(out, 'screenshots'), { recursive: true });
-if (existsSync(join(here, 'screenshots'))) cpSync(join(here, 'screenshots'), join(out, 'screenshots'), { recursive: true });
+function copyTree(fromName: string, toName: string): void {
+  const source = join(entryRoot, fromName);
+  if (!existsSync(source)) return;
+  mkdirSync(join(outputDir, toName), { recursive: true });
+  cpSync(source, join(outputDir, toName), { recursive: true });
+}
 
-writeFileSync(
-  join(out, 'dossier.json'),
-  buildDossier(out, { text_max_bytes: 163840, screenshots: { max: 4, max_bytes: 262144 }, app_max_files: 993, app_max_bytes: 50331648 }),
-);
+mkdirSync(outputDir, { recursive: true });
+copyTree('app', 'app');
+copyTree('screenshots', 'screenshots');
+
+const dossierLimits = {
+  text_max_bytes: 163840,
+  screenshots: { max: 4, max_bytes: 262144 },
+  app_max_files: 993,
+  app_max_bytes: 50331648,
+};
+
+// Write the dossier last, after both trees are in place, so its Load block
+// and screenshot sheet describe exactly what was copied.
+writeFileSync(join(outputDir, 'dossier.json'), buildDossier(outputDir, dossierLimits));
